@@ -120,6 +120,11 @@ namespace Bitcoin_Bonuses.Controllers
             return View();
         }
 
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (_db != null)
