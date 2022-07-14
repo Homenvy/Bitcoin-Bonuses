@@ -1,0 +1,38 @@
+﻿@model Bitcoin_Bonuses.Models.Bitcoin
+
+@{
+    ViewBag.Title = Model.BonusName;
+}
+
+<div class="tablewrap">
+    <div class="boxHeader">
+        More Information on @Model.BonusName
+    </div>
+    <div class="tablewrapInternal">
+        <div style="float: left; padding-right: 10px; padding-top: 3px;">@Html.Raw(Model.BannerSRC)</div>
+        <p>@Model.MoreInfoDetails</p>
+    </div>
+</div>
+
+<div class="contentbox">
+    <div class="boxHeader">@Model.BonusName Bonus</div>
+
+    <div class="contentboxInternal">
+
+        <p><b>Type: </b>@Model.BonusType</p>
+        <p><b>Bonus Amount: </b>@Model.BonusAmt @Model.MoreInfo</p>
+        <p><b>Bonus Info: </b>@Model.BonusInfo</p>
+        <p><b>Country: </b>@Model.FlagIconAlt</p>
+        <p><b>Provider: </b>@Model.BonusName</p>@*brainstorm ideas to add more to this page to make it flavorful*@
+        @Html.ActionLink("Back", ("Bitcoin" + @Model.BonusType),null,new { @class = "backButton" })
+        <a href="@Model.ClaimNowURL" class="claimMe" target="_blank">Claim Now!</a>
+    </div>
+</div>
+
+@*@section featured{
+    <div class="fullwidthbox">
+        <div class="fullwidthinternal">
+            <p>test</p>
+        </div>
+    </div>
+}*@

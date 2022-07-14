@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Bitcoin Bonuses</title>
+    <link rel="stylesheet" href="http://www.jacklmoore.com/colorbox/example1/colorbox.css" />
+    <link href="~/Bitcoin.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />@*Needs a website description*@
+    <meta name="keywords" content="" />@*Needs some keywords associated with the site*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="float-left">
+                <img src="~/Images/BitcoinLogo.png" class="logoPic1" />
+                <p class="site-title">
+                    @Html.ActionLink("Bitcoin Bonuses", "Index", "Home")
+                </p>
+                <p class="slogan"><i>Your One Stop for Every Bitcoin-Related Bonus!</i></p>
+            </div>
+            <div class="float-right">
+                <img src="~/Images/BitcoinLogo.png" class="logoPic2" />
+                @*<section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>*@
+
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Forex", "BitcoinForex", "Home")</li>
+                    <li>@Html.ActionLink("Exchange", "BitcoinExchange", "Home")</li>
+                    <li>@Html.ActionLink("Services", "BitcoinServices", "Home")</li>
+                    <li>@Html.ActionLink("Gambling", "BitcoinGambling", "Home")</li>
+                    <li>@Html.ActionLink("Mining", "BitcoinMining", "Home")</li>
+                    <li>@Html.ActionLink("All", "BitcoinAll", "Home")</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="body">
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+        @RenderSection("featured", required: false)
+    </div>
+
+    <div class="ender-wrapper">
+        <div class="float-left">
+            <img src="~/Images/BitcoinLogo.png" class="logoPic3" />
+        </div>
+        <div class="siteMapBox">
+            <div class="siteMapHeader">Site Map</div>
+            <div class="siteMapInner">
+                <div class="siteMapInnerBox" style="float: left;">
+                    @Html.ActionLink("Home", "Index", "Home")
+                    <br />
+                    @Html.ActionLink("About Us", "About", "Home")
+                </div>
+                <div class="siteMapInnerBox" style="float: left; left: 2px;">
+                    @Html.ActionLink("Forex", "BitcoinForex", "Home") <br />
+                    @Html.ActionLink("Exchange", "BitcoinExchange", "Home") <br />
+                    @Html.ActionLink("Services", "BitcoinServices", "Home") <br />
+                    @Html.ActionLink("Gambling", "BitcoinGambling", "Home") <br />
+                    @Html.ActionLink("Mining", "BitcoinMining", "Home") <br />
+                    @Html.ActionLink("All", "BitcoinAll", "Home") <br />
+                </div>
+                <div class="siteMapInnerBox" style="float: right;">
+
+                </div>
+            </div>
+        </div>
+        <div class="float-right">
+            <img src="~/Images/BitcoinLogo.png" class="logoPic4" />
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                <p>Made by: <a href="mailto:homenvy@gmail.com">Michael Ess-Haghabodi</a></p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.colorbox.js"></script>
+    <script src="~/Scripts/CookiePopup.js"></script>
+</body>
+</html>

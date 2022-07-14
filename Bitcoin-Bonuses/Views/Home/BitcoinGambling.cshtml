@@ -1,0 +1,72 @@
+﻿@model Bitcoin_Bonuses.Models.BitcoinTradingDB
+@{
+    ViewBag.Title = "Bitcoin Gambling Bonuses";
+}
+
+<div class="tablewrap">
+    <div class="boxHeader">@ViewBag.Title</div>
+    <div class="tablewrapInternal">
+        <table class="bonus">
+            <thead class="bonus">
+                <tr>
+                    <th>Country</th>
+                    <th>Site Banner</th>
+                    <th>Site</th>
+                    <th>Bonus</th>
+                    <th>Claim Now</th>
+                    <th>More Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Bitcoin)
+                {
+                    if (item.BonusType == "Gambling")
+                    {
+                        string row = "even";
+                        if ((item.RowID) % 2 == 1)
+                        {
+                            row = "odd";
+                        }
+                    <tr class="@row">
+                        <td>
+                            <img src="@item.FlagIcon" alt="@item.FlagIconAlt" width="40" height="20"/>
+                        </td>
+                        <td>
+                            <img src="@item.Image"alt="@item.ImageAlt" />
+                        </td>
+                        <td>
+                            <a href="@item.ClaimNowURL" target="_blank">@item.BonusName</a>
+                        </td>
+                        <td>
+                            @item.BonusAmt @item.MoreInfo
+                        </td>
+                        <td>
+                            <a href="@item.ClaimNowURL" class="claimMe" target="_blank">Claim Now!</a>
+                        </td>
+                        <td>
+                            @Html.ActionLink("More Info", "_FeaturedDisplayPartial", new { id = item.Id }, new { @class = "moreInfo" })
+                        </td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="contentbox">
+    <div class="boxHeader">Gambling with Bitcoins</div>
+    <div class="contentboxInternal">
+        <p>
+            These listings lead to gambling sites that accept Bitcoins! There are all kinds of incentives to join a particular site's player pool so there are plenty of ways to earn bonuses in this category.
+            If you like to gamble and want to earn Bitcoins with bonuses feel free to check out the listings!
+        </p>
+    </div>
+</div>
+
+@*@section featured{
+    <div class="fullwidthbox">
+        <div class="fullwidthinternal">
+            <p>test</p>
+        </div>
+    </div>
+}*@
